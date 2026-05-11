@@ -1,8 +1,10 @@
 import numpy as np
 import pickle
 from flask import Flask, request, render_template, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # ── Load model & scalers ─────────────────────────────────────────────────────
 model             = pickle.load(open('model.pkl',             'rb'))
